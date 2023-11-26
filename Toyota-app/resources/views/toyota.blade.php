@@ -2,8 +2,12 @@
 <form action="car" method="post">
     @csrf
     <input type="text" name="username" placeholder="Enter user id">
-    <br><br>
+    <br>
+    <span style="color: red">@error('username'){{$message}}@enderror</span>
+    <br>
     <input type="password" name="userpassword" placeholder="Enter user password">
-    <br><br>
+    <br>
+    <span style="color: red">@error('userpassword'){{$message}}@enderror</span>
+    <br>
     <button type="submit">Login</button>
 </form>
