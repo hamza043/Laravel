@@ -16,7 +16,8 @@ class checkAge
      */
     public function handle(Request $request, Closure $next)
     {
-        echo "global middleware";
+        // echo "global middleware";
+        echo "group middleware";
         if($request->age && $request->age<18)
         {
             return redirect('hello');

@@ -17,5 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('users','users');
 Route::view('hello','hello');
+Route::view('home','home');
+
+Route::group(['middleware'=>['protectPage']],function(){
+    Route::view('users','users');
+});
