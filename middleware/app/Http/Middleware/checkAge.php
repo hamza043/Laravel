@@ -17,11 +17,19 @@ class checkAge
     public function handle(Request $request, Closure $next)
     {
         // echo "global middleware";
-        echo "group middleware";
-        if($request->age && $request->age<18)
+        // echo "group middleware";
+        echo "Routed Middleware";
+        if($request->age && $request->age < 18)
         {
             return redirect('hello');
         }
         return $next($request);
     }
 }
+        // if($request->age && $request->age<18)
+        // {
+        //     return redirect('hello');
+        // }
+        // return $next($request);
+//     }
+// }

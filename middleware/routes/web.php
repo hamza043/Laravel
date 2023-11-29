@@ -17,9 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//====> Group Middleware <=====
+
+// Route::view('hello','hello');
+// Route::view('home','home');
+
+// Route::group(['middleware'=>['protectPage']],function(){
+//     Route::view('users','users');
+// });
+
+//=====> Routed Middleware <=====
+
 Route::view('hello','hello');
 Route::view('home','home');
-
-Route::group(['middleware'=>['protectPage']],function(){
-    Route::view('users','users');
-});
+Route::view('users','users')->middleware('protectedPage');
